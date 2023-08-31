@@ -1,17 +1,17 @@
-# Llama2-QLoRA-on-SageMaker
+# SageMaker-LLM-Workshop
 
 This experiment is based on Amazon SageMaker. Including, 
 
-1/ Training a Bloke Llama2 (TheBloke/Llama-2-7B-fp16) QLoRA Adapter
+1/ Training a Bloke Llama2 (TheBloke/Llama-2-7B-fp16) QLoRA. Including Merge the freezed LLM and the trained LoRA into one-model for faster inference later).
 
-2/ Merge the freezed LLM and the trained adapter into one-model for faster inference later
-
-3/ Use LMI (Large Model Inference) container on SageMaker Endpoint to host the adpated model saved in S3
+2/ Use LMI (Large Model Inference) container on SageMaker Endpoint to host the adpated model saved in S3
 
     - in inference/, use Basic Python engine (HuggingFace Accelerate)
     
     - in inference-deepspeed/, use LMI optimized DJL-DeepSpeed engine
 
+
+3/ Deploying a Falcon-7b model with HuggingFace TGI inference container.
 
 
 **Infra**:
