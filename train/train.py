@@ -368,6 +368,7 @@ if __name__ == "__main__":
 
     output_dir = args.output_dir + "final_checkpoint"
     train(model, tokenizer, dataset, output_dir)
+    tokenizer.save_pretrained(output_dir)
 
     model = AutoPeftModelForCausalLM.from_pretrained(output_dir, device_map="auto", torch_dtype=torch.bfloat16)
     model = model.merge_and_unload()
